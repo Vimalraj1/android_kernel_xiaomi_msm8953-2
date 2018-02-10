@@ -31,7 +31,7 @@ echo -e "***********************************************$nocol"
 LC_ALL=C date +%Y-%m-%d
 kernel_dir=$PWD
 build=$kernel_dir/out
-export CLANG_PATH=~/android/clang/clang-4053586/bin/
+export CLANG_PATH=~/Android/kernel/tc/clang/clang-4579689/bin/clang
 export PATH=${CLANG_PATH}:${PATH}
 export CLANG_TRIPLE=aarch64-linux-gnu-
 export CROSS_COMPILE=~/Android/kernel/tc/aarch64-linux-android/bin/aarch64-cortex_a53-linux-android-
@@ -77,8 +77,8 @@ if [ -d arch/arm64/boot/"$kerneltype" ]; then
 	read -p "Begin build now..(y/n)? : " dchoice
 	case "$dchoice" in
 		y|Y)
-			make CC=clang "$config"
-			make CC=clang "$jobcount"
+			make CC=~/Android/kernel/tc/clang/clang-4579689/bin/clang "$config"
+			make CC=~/Android/kernel/tc/clang/clang-4579689/bin/clang "$jobcount"
 			exit 0;;
 
 		n|N )
@@ -119,8 +119,8 @@ else
 	read -p "Begin build now..(y/n)? : " bchoice
 	case "$bchoice" in
 		y|Y)
-			make CC=clang "$config"
-			make CC=clang "$jobcount"
+			make CC=~/Android/kernel/tc/clang/clang-4579689/bin/clang "$config"
+			make CC=~/Android/kernel/tc/clang/clang-4579689/bin/clang "$jobcount"
 			exit 0;;
 		n|N )
 			exit 0;;
